@@ -7,10 +7,11 @@ import Header from './Components/Header/Header';
 import Notfound from './Components/Notfound/Notfound';
 import Signup from './Components/Signup/Signup';
 import Manage from './Components/Manage/Manage';
+import Footer from './Components/Footer/Footer';
 
 function App() {
   return (
-    <div className="App">
+    <div >
       <Header></Header>
        <Routes>
         <Route path="/" element={<Home></Home>} />
@@ -21,6 +22,7 @@ function App() {
         <Route path="/signup" element={<Signup></Signup>} />
         <Route path="*" element={<Notfound></Notfound>} />
       </Routes>
+      <Footer></Footer>
     </div>
   );
 }

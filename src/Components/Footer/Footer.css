@@ -1,0 +1,13 @@
+.footer-bg{
+    background-color: #333;
+}
+.f-line{
+
+    height: 1px;
+    width: 91%;
+    border: 1px solid #0aac76;
+    z-index: 1;
+}
+.footer-text{
+    color: white;
+}

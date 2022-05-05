@@ -10,7 +10,7 @@
 }
 .carousel-title h1{
     font-size: 60px;
-   
+   border-radius: 20px;
     background-color: #0aac7683;
     padding: 20px;
 }
