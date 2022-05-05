@@ -6,9 +6,9 @@ import './Header.css';
 const Header = () => {
     return (
         <div>
-            <Navbar bg="light" expand="lg" fixed='top'>
+            <Navbar className='nav-bg' expand="lg" fixed='top'>
                 <Container>
-                    <Navbar.Brand to="#">MAX WAREHOUSE</Navbar.Brand>
+                    <Navbar.Brand className='nav-logo'>MAX WAREHOUSE</Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll">
                         <Nav
@@ -17,7 +17,7 @@ const Header = () => {
                             navbarScroll
                         >
                             <Link to="/home" className='nav-text'>Home</Link>
-                            <Link to="/inventory" className='nav-text'>Inventory</Link>
+                            <Link to="/manage" className='nav-text'>Manage</Link>
                             <Link to="/contact" className='nav-text'>Contact</Link>
                             <Link to="/login" className='nav-text'>Login</Link>
                            

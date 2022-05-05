@@ -1,6 +1,18 @@
+.nav-bg{
+    background-color: #0AAC76;
+}
+.nav-logo{
+    text-decoration: none;
+    color: white !important;
+    font-weight: 600;
+}
 .nav-text{
     margin: 0 5px;
     text-decoration: none;
-    color: black;
+    color: white;
     font-weight: 600;
+}
+.nav-text:hover{
+    color: #333;
+    
 }
