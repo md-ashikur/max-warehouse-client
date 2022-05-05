@@ -7,19 +7,30 @@ const Signup = () => {
     const onSubmit = data => console.log(data);
 
     return (
-        <div className='form-body w-50  mx-auto '>
-            <h1>SIGN UP</h1>
+        <div>
+            <div className='bg-pic'>
+                <img src="https://images.unsplash.com/photo-1530940031329-f884cdcf65c3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="" className='w-100'/></div>
+           
 
             {/* ==============
            email pass login option
            ===============================  */}
-            <form onSubmit={handleSubmit(onSubmit)} className="d-flex flex-column w-50 mx-auto my-3">
+            <div  className='form-body mx-auto my-5'>
+            <h1>SIGN UP</h1>
+            <form onSubmit={handleSubmit(onSubmit)} className="d-flex flex-column w-75 mx-auto my-3">
+                <input {...register("name", { required: true })} className="form-input my-2" placeholder="Enter Full Name" />
+                {errors.name?.type === 'required' && "Name is required"}
+
                 <input {...register("email", { required: true })} className="form-input" placeholder="email" />
                 {errors.email?.type === 'required' && "Email is required"}
 
                 <input type="password" {...register("password", { required: true })} placeholder="password" className="form-input my-2" />
                 {errors.password?.type === 'required' && "password is required"}
-                <input type="submit" value="Login" className='submit-btn mx-auto py-2 mt-2' />
+
+                <input type="password" {...register("confirmPassword", { required: true })} placeholder="confirm password" className="form-input mb-2" />
+               
+
+                <input type="submit" value="Sign Up" className='submit-btn mx-auto py-2 mt-2' />
             </form>
             <p>Already have an account? <Link to="/login" className='toggle-link'>Login</Link></p>
             {/* ==============
@@ -41,6 +52,7 @@ const Signup = () => {
                 <button className='other-login-btn py-2'>
                     <img src="https://toppng.com/uploads/preview/facebook-logo-transparent-11549681696nullxylgyy.png" alt="" /> Facebook
                 </button>
+            </div>
             </div>
         </div>
     );

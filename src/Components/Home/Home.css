@@ -6,7 +6,11 @@
     position: relative;
     top: 200px;
     font-size: 30px;
+   
 }
 .carousel-title h1{
     font-size: 60px;
+   
+    background-color: #0aac7683;
+    padding: 20px;
 }

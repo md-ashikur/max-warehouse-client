@@ -7,7 +7,7 @@ const Home = () => {
         <div>
             <Carousel.Caption className='mb-5 carousel-title'>
                         <h1 className='mb-5'><b>REALITY</b> is just your <b>PERCEPTION</b></h1>
-                        <p>Attract, Engage, 7 convert<br></br> more<br></br> qualified vehicle shoppers</p>
+                        <p>Attract, Engage, 7 convert<br></br> more qualified vehicle shoppers</p>
                     </Carousel.Caption>
             <Carousel>
             

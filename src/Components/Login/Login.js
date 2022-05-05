@@ -8,13 +8,18 @@ const Login = () => {
     const onSubmit = data => console.log(data);
 
     return (
-        <div className='form-body w-50  mx-auto '>
-            <h1>LOGIN</h1>
+        <div>
+            <div className='bg-pic'>
+                <img src="https://images.unsplash.com/photo-1471479917193-f00955256257?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1631&q=80" alt="" className='w-100'/>
+                </div>
+            
 
             {/* ==============
            email pass login option
            ===============================  */}
-            <form onSubmit={handleSubmit(onSubmit)} className="d-flex flex-column w-50 mx-auto my-3">
+           <div  className='form-body mx-auto my-5'>
+           <h1>LOGIN</h1>
+           <form onSubmit={handleSubmit(onSubmit)} className="d-flex flex-column w-75 mx-auto my-3">
                 <input {...register("email", { required: true })} className="form-input" placeholder="email" />
                 {errors.email?.type === 'required' && "Email is required"}
 
@@ -43,6 +48,7 @@ const Login = () => {
                     <img src="https://toppng.com/uploads/preview/facebook-logo-transparent-11549681696nullxylgyy.png" alt="" /> Facebook
                 </button>
             </div>
+           </div>
         </div>
     );
 };
