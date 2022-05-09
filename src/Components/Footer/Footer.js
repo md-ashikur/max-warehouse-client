@@ -6,19 +6,19 @@ const Footer = () => {
     return (
         <div className='footer-bg footer-text'>
             <Container >
-                <Row className='py-5'>
+                <Row xs={1} md={4} className='py-5'>
                     <Col className=' text-left'>
-                    <h3>MAX WAREHOUSE</h3>
+                    <h4>MAX WAREHOUSE</h4>
                     <div className='f-line'></div>
                     <p className='text-left'>By subscribing to our company newsletter you will always be up-to-date on our latest promotions, deals and vehicle inventory!</p>
                     </Col>
 
                     <Col>
-                    <h2>USEFUL LINKS</h2>
+                    <h4>USEFUL LINKS</h4>
                     </Col>
 
                     <Col>
-                    <h2>FEATURED VEHICLES</h2>
+                    <h4>FEATURED VEHICLES</h4>
                     <Row className='my-3'>
                         <Col className='f-img'>
                         <img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" alt="" className='w-100'/>
@@ -45,7 +45,7 @@ const Footer = () => {
                     </Col>
 
                     <Col>
-                    <h2>CONTACT US</h2>
+                    <h4>CONTACT US</h4>
                     <p><b>Address:</b> 1234 Street Name, City</p>
                     <p><b>Phone:</b> 1-800-123-4567</p>
                     <p><b>Email:</b> sales@company.com</p>

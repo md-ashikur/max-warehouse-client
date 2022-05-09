@@ -18,6 +18,8 @@ const Header = () => {
                         >
                             <Link to="/home" className='nav-text'>Home</Link>
                             <Link to="/manage" className='nav-text'>Manage</Link>
+                            <Link to="/myItems" className='nav-text'>My Items</Link>
+                            <Link to="/blog" className='nav-text'>Blog</Link>
                             <Link to="/contact" className='nav-text'>Contact</Link>
                             <Link to="/login" className='nav-text'>Login</Link>
                            
