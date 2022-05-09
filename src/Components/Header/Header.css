@@ -7,7 +7,7 @@
     font-weight: 900;
 }
 .nav-text{
-    margin: 0 5px;
+    margin: 0 9px;
     text-decoration: none;
     color: white;
     font-weight: 600;
@@ -15,4 +15,11 @@
 .nav-text:hover{
     color: #333;
     
+}
+.signOut{
+    border: none;
+    border-radius: 5px;
+    padding: 2px 5px;
+    font-weight: 600;
+    color: orangered;
 }

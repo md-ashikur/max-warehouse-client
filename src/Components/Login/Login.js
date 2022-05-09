@@ -1,12 +1,44 @@
-import React from 'react';
-import { useForm } from "react-hook-form";
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import auth from '../../firebase.init';
+import Loading from '../Loading/Loading';
+
 import "./Login.css";
 
-const Login = () => {
-    const { register, formState: { errors }, handleSubmit } = useForm();
-    const onSubmit = data => console.log(data);
 
+const Login = () => {
+    const navigate = useNavigate();
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    // google--------------
+    const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+    // email password-----------
+    const location = useLocation();
+
+    let from = location.state?.from?.pathname || "/";
+
+    const [
+        signInWithEmailAndPassword,
+        user1,
+        loading1,
+        error1,
+    ] = useSignInWithEmailAndPassword(auth);
+
+
+    if (user || user1) {
+        navigate(from, { replace: true });
+    }
+    if (loading || loading1) {
+        <Loading></Loading>
+    }
+
+
+    const handleSubmit = event => {
+        event.preventDefault();
+        
+    }
+  
     return (
         <div>
             <div className='bg-pic'>
@@ -19,13 +51,16 @@ const Login = () => {
            ===============================  */}
            <div  className='form-body mx-auto my-5'>
            <h1>LOGIN</h1>
-           <form onSubmit={handleSubmit(onSubmit)} className="d-flex flex-column w-75 mx-auto my-3">
-                <input {...register("email", { required: true })} className="form-input" placeholder="email" />
-                {errors.email?.type === 'required' && "Email is required"}
+           <form onSubmit={handleSubmit} className="d-flex flex-column w-75 mx-auto my-3">
+                <input onBlur={(e) => setEmail(e.target.value)} type="email" name="email" className="form-input" placeholder="email" required/>
+                
 
-                <input type="password" {...register("password", { required: true })} placeholder="password" className="form-input my-2" />
-                {errors.password?.type === 'required' && "password is required"}
-                <input type="submit" value="Login" className='submit-btn mx-auto py-2 mt-2' />
+                <input
+                onBlur={(e) => setPassword(e.target.value)} type="password" name="password" placeholder="password" className="form-input my-2" required/>
+
+                 <p style={{color: 'red'}}>{error?.message}</p> 
+
+                <input type="submit" value="Login" onClick={() => signInWithEmailAndPassword(email, password)}className='submit-btn mx-auto py-2 mt-2' />
             </form>
             <p>Don't have any account? <Link to="/signup" className='toggle-link'>Sign Up</Link></p>
             {/* ==============
@@ -41,8 +76,8 @@ const Login = () => {
            other login option
            ===============================  */}
             <div className="d-flex flex-column w-50 mx-auto ">
-                <button className='other-login-btn my-2 py-2'>
-                    <img src="http://assets.stickpng.com/images/5847f9cbcef1014c0b5e48c8.png" alt="" /> Google
+                <button className='other-login-btn my-2 py-2' onClick={() => signInWithGoogle()}>
+                    <img src="http://assets.stickpng.com/images/5847f9cbcef1014c0b5e48c8.png" alt=""  /> Google
                 </button>
                 <button className='other-login-btn py-2'>
                     <img src="https://toppng.com/uploads/preview/facebook-logo-transparent-11549681696nullxylgyy.png" alt="" /> Facebook
