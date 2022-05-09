@@ -1,16 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Card, CardGroup, Carousel, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import Item from '../Item/Item';
+import ItemCard from '../ItemCard/ItemCard';
 import Loading from '../Loading/Loading';
 import './Home.css';
 
 const Home = () => {
 
+    const [items, setItems] = useState([]);
 
+    useEffect(() => {
+        fetch('data.json')
+            .then(res => res.json())
+            .then(data => setItems(data));
+    }, [])
 
     return (
         <div>
-           
+
 
             <Carousel.Caption className='mb-5 carousel-title'>
                 <h1 className='mb-5'><b>REALITY</b> is just your <b>PERCEPTION</b></h1>
@@ -47,98 +55,21 @@ const Home = () => {
 
             {/* =========================== */}
             <Container className='my-5'>
+                <h2 className='text-center'>Inventory Items</h2>
                 <CardGroup >
-                    <Card >
-                        <Card.Img variant="top" src="https://images.unsplash.com/photo-1494697536454-6f39e2cc972d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60" />
-                        <Card.Body>
-                            <Card.Title>Card title</Card.Title>
-                            <Card.Text>
-                                This is a wider card with supporting text below as a natural lead-in to
-                                additional content. This content is a little bit longer.
-                            </Card.Text>
-                        </Card.Body>
-                        <Card.Footer>
-                            <small className="text-muted">Last updated 3 mins ago</small>
-                        </Card.Footer>
-                    </Card>
-                    <Card className='mx-2'>
-                        <Card.Img variant="top" src="https://images.unsplash.com/photo-1533106418989-88406c7cc8ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDV8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60" />
-                        <Card.Body>
-                            <Card.Title>Card title</Card.Title>
-                            <Card.Text>
-                                This card has supporting text below as a natural lead-in to additional
-                                content.{' '}
-                            </Card.Text>
-                        </Card.Body>
-                        <Card.Footer>
-                            <small className="text-muted">Last updated 3 mins ago</small>
-                        </Card.Footer>
-                    </Card>
-                    <Card>
-                        <Card.Img variant="top" src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60" />
-                        <Card.Body>
-                            <Card.Title>Card title</Card.Title>
-                            <Card.Text>
-                                This is a wider card with supporting text below as a natural lead-in to
-                                additional content. This card has even longer content than the first to
-                                show that equal height action.
-                            </Card.Text>
-                        </Card.Body>
-                        <Card.Footer>
-                            <small className="text-muted">Last updated 3 mins ago</small>
-                        </Card.Footer>
-                    </Card>
+                    {
+                        items.slice(0, 6).map(item => <Item
+                            key={item._id}
+                            item={item}
+                        >
+                        </Item>)
+                    }
                 </CardGroup>
-
-
-
-                <CardGroup >
-                    <Card>
-                        <Card.Img variant="top" src="https://images.unsplash.com/photo-1494697536454-6f39e2cc972d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60" />
-                        <Card.Body>
-                            <Card.Title>Card title</Card.Title>
-                            <Card.Text>
-                                This is a wider card with supporting text below as a natural lead-in to
-                                additional content. This content is a little bit longer.
-                            </Card.Text>
-                        </Card.Body>
-                        <Card.Footer>
-                            <small className="text-muted">Last updated 3 mins ago</small>
-                        </Card.Footer>
-                    </Card>
-                    <Card className='mx-2'>
-                        <Card.Img variant="top" src="https://images.unsplash.com/photo-1533106418989-88406c7cc8ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDV8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60" />
-                        <Card.Body>
-                            <Card.Title>Card title</Card.Title>
-                            <Card.Text>
-                                This card has supporting text below as a natural lead-in to additional
-                                content.{' '}
-                            </Card.Text>
-                        </Card.Body>
-                        <Card.Footer>
-                            <small className="text-muted">Last updated 3 mins ago</small>
-                        </Card.Footer>
-                    </Card>
-                    <Card>
-                        <Card.Img variant="top" src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60" />
-                        <Card.Body>
-                            <Card.Title>Card title</Card.Title>
-                            <Card.Text>
-                                This is a wider card with supporting text below as a natural lead-in to
-                                additional content. This card has even longer content than the first to
-                                show that equal height action.
-                            </Card.Text>
-                        </Card.Body>
-                        <Card.Footer>
-                            <small className="text-muted">Last updated 3 mins ago</small>
-                        </Card.Footer>
-                    </Card>
-                </CardGroup>
-
-                <div className='mx-auto text-center my-5'>
-                    <Link to="/manage"><button className='manage-btn'>Manage Inventory</button></Link>
-                </div>
             </Container>
+            <div className='mx-auto text-center my-5'>
+                <Link to="/manage"><button className='manage-btn'>Manage Inventories</button></Link>
+            </div>
+
 
         </div>
     );
