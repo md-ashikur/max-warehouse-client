@@ -50,7 +50,7 @@ const Signup = () => {
 
 
             {/* ==============
-           email pass login option
+           email pass option
            ===============================  */}
             <div className='form-body mx-auto my-5'>
                 <h1>SIGN UP</h1>
