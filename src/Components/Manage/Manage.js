@@ -18,11 +18,11 @@ const Manage = () => {
             <h1 className='mt-5 text-center'>Manage Inventory</h1>
             <CardGroup>
                 {
-                    items.map(item => <Item
-                        key={item._id}
-                        item={item}
-                    >
-                    </Item>)
+                    // items.map(item => <Item
+                    //     key={item._id}
+                    //     item={item}
+                    // >
+                    // </Item>)
                 }
             </CardGroup>
             <div className='mx-auto text-center my-5'>

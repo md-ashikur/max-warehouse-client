@@ -1,10 +1,14 @@
-# Getting Started with Create React App
+# MAX WAREHOUSE
+It's a car Warehouse website.Created using react.js and MongoDB database used for this website.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ [MAX WAREHOUSE](https://max-warehouse-6c399.web.app/).
 
-## Available Scripts
-
-In the project directory, you can run:
+## About website
+* It's firebase authentication system.
+* In add item page user can add new items.
+* In manage item page user can see all items. 
+* User have to login 1st to see manage item, add item, my item page. because its protected.
+* It has email verification system while sign up .
 
 ### `npm start`
 

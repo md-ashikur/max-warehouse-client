@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Card, CardGroup, Col, Container, Row } from 'react-bootstrap';
+import { Container} from 'react-bootstrap';
 import Item from '../Item/Item';
 import "./ItemCard.css";
 
@@ -21,11 +21,11 @@ const ItemCard = () => {
                
                
                 {
-                items.map(item => <Item
-                    key={item._id}
-                    item={item}
-                >
-                </Item>)
+                // items.map(item => <Item
+                //     key={item._id}
+                //     item={item}
+                // >
+                // </Item>)
             }
                 
              

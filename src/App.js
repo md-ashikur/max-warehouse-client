@@ -25,7 +25,6 @@ function App() {
         <Route path="/myItems" element={<RequireAuth><MyItems></MyItems></RequireAuth>} />
         <Route path="/addItem" element={<RequireAuth><AddItem></AddItem></RequireAuth>} />
         <Route path="/blog" element={<Blog></Blog>} />
-        
         <Route path="/login" element={<Login></Login>} />
         <Route path="/signup" element={<Signup></Signup>} />
         <Route path="*" element={<Notfound></Notfound>} />

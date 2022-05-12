@@ -5,7 +5,7 @@ import './item.css';
 
 
 const Item = ({ item }) => {
-    const { _id, name, img, description, price, supplier } = item;
+    const { id: _id, name, img, description, price, supplier } = item;
     const navigate = useNavigate();
 
     const navigateToItem = id => {
@@ -29,7 +29,7 @@ const Item = ({ item }) => {
                                 <b>Price: {price}</b>
                                 <h4>Supplier: {supplier}</h4>
 
-                                <button className='manage-btn'>UPDATE</button>
+                                <button className='manage-btn' onClick={() => navigateToItem(_id)}>UPDATE</button>
                             </Card.Text>
                         </Card.Body>
                     </Card>
