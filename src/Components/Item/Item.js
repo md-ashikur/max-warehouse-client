@@ -27,7 +27,7 @@ const Item = ({ item }) => {
                                 <p> {description}</p>
                                 <br></br>
                                 <b>Price: {price}</b>
-                                <h4>Supplier: {supplier}</h4>
+                                <h5>Supplier: {supplier}</h5>
 
                                 <button className='manage-btn' onClick={() => navigateToItem(_id)}>UPDATE</button>
                             </Card.Text>

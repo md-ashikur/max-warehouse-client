@@ -7,7 +7,7 @@ const Manage = () => {
     const [items, setItems] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/item')
+        fetch('https://agile-caverns-36343.herokuapp.com/item')
             .then(res => res.json())
             .then(data => setItems(data));
     }, [])
