@@ -6,16 +6,13 @@ const Footer = () => {
     return (
         <div className='footer-bg footer-text'>
             <Container >
-                <Row xs={1} md={4} className='py-5'>
+                <Row xs={1} md={3} className='py-5'>
                     <Col className=' text-left'>
                     <h4>MAX WAREHOUSE</h4>
                     <div className='f-line'></div>
                     <p className='text-left'>By subscribing to our company newsletter you will always be up-to-date on our latest promotions, deals and vehicle inventory!</p>
                     </Col>
 
-                    <Col>
-                    <h4>USEFUL LINKS</h4>
-                    </Col>
 
                     <Col>
                     <h4>FEATURED VEHICLES</h4>

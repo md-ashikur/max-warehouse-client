@@ -14,13 +14,13 @@ const Item = ({ item }) => {
     return (
         <div >
 
-            <Row xs={2} md={2} className="g-4 my-4 d-flex card">
-
-                <Col>
+            
+            <Card.Img variant="top" src={img} height="260px"/>
+                
                     <Card>
 
                         <Card.Body>
-                            <Card.Title> <h3>Brand: {name}</h3></Card.Title>
+                            <Card.Title> <h5>Brand: {name}</h5></Card.Title>
                             <Card.Text>
 
 
@@ -33,10 +33,10 @@ const Item = ({ item }) => {
                             </Card.Text>
                         </Card.Body>
                     </Card>
-                </Col>
+               
 
-                <Col><Card.Img variant="top" src={img} /></Col>
-            </Row>
+               
+         
 
 
 

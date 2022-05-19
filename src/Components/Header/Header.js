@@ -21,7 +21,7 @@ const Header = () => {
                     <Navbar.Collapse id="navbarScroll">
                         <Nav
                             className="ms-auto my-2 my-lg-0"
-                            style={{ maxHeight: '100px' }}
+                            style={{ maxHeight: '200px' }}
                             navbarScroll
                         >
                             <Link to="/home" className='nav-text'>Home</Link>
@@ -29,7 +29,7 @@ const Header = () => {
                             
 
                             {user ?
-                                <div>
+                                <div >
                                     <Link to="/manage" className='nav-text'>Manage Item</Link>
                                     <Link to="/addItem" className='nav-text'>Add Item</Link>
                                     <Link to="/myItems" className='nav-text'>My Items</Link>

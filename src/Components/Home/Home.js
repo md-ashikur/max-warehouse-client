@@ -11,7 +11,7 @@ const Home = () => {
     const [items, setItems] = useState([]);
 
     useEffect(() => {
-        fetch('data.json')
+        fetch('http://localhost:5000/item')
             .then(res => res.json())
             .then(data => setItems(data));
     }, [])
@@ -56,7 +56,7 @@ const Home = () => {
             {/* =========================== */}
             <Container className='my-5'>
                 <h2 className='text-center'>Inventory Items</h2>
-                <CardGroup >
+                <div className="card-group">
                     {
                         items.slice(0, 6).map(item => <Item
                             key={item._id}
@@ -64,7 +64,7 @@ const Home = () => {
                         >
                         </Item>)
                     }
-                </CardGroup>
+                </div>
             </Container>
             <div className='mx-auto text-center my-5'>
                 <Link to="/manage"><button className='manage-btn'>Manage Inventories</button></Link>

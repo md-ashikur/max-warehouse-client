@@ -1,22 +1,21 @@
 import React, { useEffect, useState } from 'react';
-import { CardGroup } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Item from '../Item/Item';
-
+import "./Manage.css";
 
 const Manage = () => {
     const [items, setItems] = useState([]);
 
     useEffect(() => {
-        fetch('data.json')
+        fetch('http://localhost:5000/item')
             .then(res => res.json())
             .then(data => setItems(data));
     }, [])
     
     return (
-        <div>
+        <div className="container">
             <h1 className='mt-5 text-center'>Manage Inventory</h1>
-            <CardGroup>
+            <div className="card-group">
                 {
                     items.map(item => <Item
                         key={item._id}
@@ -24,7 +23,7 @@ const Manage = () => {
                     >
                     </Item>)
                 }
-            </CardGroup>
+            </div>
             <div className='mx-auto text-center my-5'>
                 <Link to="/addItem"><button className='manage-btn'>add new item</button></Link>
             </div>

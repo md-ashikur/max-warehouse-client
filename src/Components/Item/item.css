@@ -2,4 +2,8 @@
     flex-direction: row !important;
     align-items: center;
 }
-
+@media only screen and (max-width: 400px){
+    .manage-btn{
+        width: 100%;
+    }
+}

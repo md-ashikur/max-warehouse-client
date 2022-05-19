@@ -15,10 +15,7 @@
     padding: 20px;
     color: #0aac76;
 }
-.carousel-title h1:hover{
-    background-color: rgba(255, 68, 0, 0.5);
-    color: white;
-}
+
 .manage-btn{
     outline: none;
     
@@ -33,4 +30,26 @@
     background-color: #0aac76;
     border: 2px solid transparent;
     color: white;
+}
+@media only screen and (max-width: 400px){
+    .carousel-title h1{
+        font-size: 25px;
+        position:absolute;
+        top: -130px;
+        background-color: transparent;
+       
+    }
+    .carousel-title p{
+        position:absolute;
+        top: -30px;
+        left: 30px;
+        font-size: 15px;
+        
+    
+       
+    }
+   
+    .carousel-img{
+        height: 270px;
+    }
 }

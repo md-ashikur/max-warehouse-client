@@ -21,5 +21,14 @@
     border-radius: 5px;
     padding: 2px 5px;
     font-weight: 600;
+    margin: 0 9px;
     color: orangered;
+}
+
+@media only screen and (max-width: 400px){
+    .nav-text{
+        display: flex;
+        flex-direction: row;
+    }
+    
 }

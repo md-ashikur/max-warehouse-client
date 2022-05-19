@@ -3,7 +3,7 @@ import { Container} from 'react-bootstrap';
 import Item from '../Item/Item';
 import "./ItemCard.css";
 
-const ItemCard = () => {
+const ItemCard = ({item}) => {
 
     const [ items, setItems] = useState([]);
 
